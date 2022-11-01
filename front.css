@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "InterReg";
+  src: url(fonts\static\Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "InterBold";
+  src: url(fonts\static\Inter-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "InterXB";
+  src: url(fonts\static\Inter-ExtraBold.ttf);
+  font-weight: 800;
+}
+* {
+  font-family: "InterReg", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 50px 1fr 1fr 1fr;
+  grid-gap: 30px;
+  width: 85%;
+  margin-top: 20px;
+  padding-bottom: 100px;
+}
+p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: hsl(236, 13%, 42%);
+  margin: 0;
+}
+/* nav area design*/
+nav,
+#navLink {
+  grid-column: 1/4;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: end;
+}
+li {
+  margin-left: 40px;
+  font-family: "InterReg", sans-serif;
+  font-size: 15px;
+  color: hsl(236, 13%, 42%);
+}
+#logo {
+  margin-right: auto;
+  margin-left: 0;
+}
+#mainImg {
+  grid-column: 1/3;
+  grid-row: 2/4;
+}
+#mainImg img {
+  width: 100%;
+  height: 100%;
+}
+
+/*desinging right section*/
+
+#rightSect {
+  background-color: hsl(240, 100%, 5%);
+  grid-column: 3/4;
+  grid-row: 2/5;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+h3 {
+  color: white;
+}
+#rightSect span {
+  box-sizing: border-box;
+  padding: 10px;
+}
+#s2 {
+  border-top: 1px solid hsl(236, 13%, 42%);
+  border-bottom: 1px solid hsl(236, 13%, 42%);
+}
+h1 {
+  font-family: "InterBold", sans-serif;
+  font-weight: 700;
+  font-size: 2.5em;
+  color: hsl(35, 77%, 62%);
+}
+#bright {
+  grid-column: 1/2;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+#bright p {
+  color: hsl(240, 100%, 5%);
+  margin: 0;
+  font-size: 50px;
+  font-family: "InterBold", sans-serif;
+  font-weight: 800;
+  line-height: 1;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: hsl(5, 85%, 63%);
+  width: 50%;
+  height: 30%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  margin-top: 5%;
+  font-family: "InterReg", sans-serif;
+  font-weight: 700;
+}
+/*desinging lower 3 option */
+.bottomSect {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: 40% 1fr;
+  column-gap: 20px;
+}
+.bottomSect .number {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  font-size: 32px;
+  font-weight: 700;
+  color: hsl(233, 8%, 79%);
+}
+.bottomSect .para {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.bottomSect img {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  width: 100%;
+  height: 100%;
+}
+.bottomSect .para span {
+  font-family: "InterXB", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: hsl(240, 100%, 5%);
+  line-height: 2;
+}
+
+/* all hover effect here*/
+li:hover {
+  cursor: pointer;
+  color: hsl(5, 85%, 63%);
+}
+
+#rightSect h3:hover {
+  cursor: pointer;
+  color: hsl(35, 77%, 62%);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(240, 100%, 5%);
+}
+.bottomSect .para span:hover {
+  cursor: pointer;
+  color: hsl(5, 85%, 63%);
+}
+
+/*for mobile screen size 375px*/
+
+@media screen and (max-width:375px){
+  #wrapper {
+    display: block;
+    width: 95vw;
+    padding-bottom: 100px;
+  }
+  #navbar,
+  #mobileMainImg,
+  #para,
+  #bright,
+  #rightSect,
+  .bottomSect {
+    margin-bottom: 20px;
+  }
+
+  #navLink {
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    padding-top: 150px;
+    position: fixed;
+    top: 0px;
+    width: 90%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: none;
+  }
+  #navLink:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: -12.5%;
+    width: 20%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.527);
+    z-index: -999;
+  }
+  #navLink li {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: hsl(240, 100%, 5%);
+  }
+  li:hover {
+    color: hsl(5, 85%, 63%);
+  }
+  #drawCloser {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+  }
+  button {
+    height: 45px;
+  }
+}
+.attribution {
+  align-self: center;
+  margin: 5px 2%;
+}
